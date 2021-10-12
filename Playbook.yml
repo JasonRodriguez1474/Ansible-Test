@@ -1,0 +1,15 @@
+---
+
+- name: JasonR Example Playbook
+  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  hosts: firewalls
+  tasks:
+
+    - name: Set Admin
+      panos_admin:
+        ip_address: "172.31.1.12"
+        password: "admin"
+        admin_username: admin
+        admin_password: "insecurepassword123"
+        commit: False
